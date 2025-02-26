@@ -1,0 +1,19 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "C++: g++ - Ejecutar programa",
+        "type": "cppdbg",
+        "request": "launch",
+        "program": "${workspaceFolder}/output/main",  // Ruta al archivo ejecutable
+        "args": [],
+        "stopAtEntry": false,
+        "cwd": "${workspaceFolder}",
+        "externalConsole": true,  // Esto abrirá una consola externa para mostrar la salida
+        "MIMode": "gdb",
+        "miDebuggerPath": "/usr/bin/gdb",
+        "preLaunchTask": "Compilar C++"  // Asegúrate de que la tarea de compilación se ejecute antes
+      }
+    ]
+  }
+  
