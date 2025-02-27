@@ -1,0 +1,41 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+struct Cliente {
+    string nombre;
+    double consumo;
+};
+
+void calcularFacturas(vector<Cliente>& clientes) {
+    double totalConsumo = 0;
+    for (const auto& cliente : clientes) { // O(n)
+        totalConsumo += cliente.consumo;
+    }
+    
+    double consumoPromedio = totalConsumo / clientes.size(); // O(1)
+    
+    for (auto& cliente : clientes) { // O(n)
+        double factura = 0;
+        if (cliente.consumo <= 20) {
+            factura = cliente.consumo * 5.00;
+        } else {
+            factura = 20 * 5.00 + (cliente.consumo - 20) * 7.50;
+        }
+        
+        if (consumoPromedio < 30) {
+            factura -= factura * (consumoPromedio / 100); // O(1)
+        }
+        
+        cout << "Cliente: " << cliente.nombre << " - Factura: Q" << factura << endl;
+    }
+    
+    double totalMensual = 0;
+    for (const auto& cliente : clientes) { // O(n)
+        totalMensual += (cliente.consumo <= 20) ? cliente.consumo * 5.00 : 20 * 5.00 + (cliente.consumo - 20) * 7.50;
+    }
+    
+    cout << "Predicción de facturación para 3 meses: Q" << totalMensual * 3 << endl; // O(1)
+}
+

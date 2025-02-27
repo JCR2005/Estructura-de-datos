@@ -1,0 +1,26 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "build program",
+        "type": "shell",
+        "command": "g++",
+        "args": [
+          "-Wall",
+          "-Wextra",
+          "-g3",
+          "/home/carlos/Documentos/EDD/Practica 1/main.cpp",
+          "/home/carlos/Documentos/EDD/Practica 1/miClase.cpp",
+          "-o",
+          "/home/carlos/Documentos/EDD/Practica 1/output/main"
+        ],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "problemMatcher": ["$gcc"],
+        "detail": "Compilando el programa"
+      }
+    ]
+  }
+  
