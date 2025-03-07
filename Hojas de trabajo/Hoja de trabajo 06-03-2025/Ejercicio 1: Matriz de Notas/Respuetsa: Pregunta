@@ -1,0 +1,4 @@
+Pregunta: ¿Cuál es la complejidad del acceso a un elemento específico de la matriz?
+
+	La complejidad del acceso a un elemento específico de la matriz notas[x][y] en este código es O(1),
+ya que al momento de acceder al a un elemto de una matriz requiere una oprecion nadamas, y un espacion en memoria nada mas.
