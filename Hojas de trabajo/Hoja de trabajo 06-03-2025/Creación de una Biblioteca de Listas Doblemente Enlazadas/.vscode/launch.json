@@ -1,0 +1,24 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "cppdbg",
+      "request": "launch",
+      "args": [],
+      "stopAtEntry": false,
+      "externalConsole": false,
+      "cwd": "/home/carlos/Documentos/Estructura-de-datos/Hojas de trabajo/Hoja de trabajo 06-03-2025/Creación de una Biblioteca de Listas Doblemente Enlazadas",
+      "program": "/home/carlos/Documentos/Estructura-de-datos/Hojas de trabajo/Hoja de trabajo 06-03-2025/Creación de una Biblioteca de Listas Doblemente Enlazadas/build/Debug/outDebug",
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    }
+  ]
+}
