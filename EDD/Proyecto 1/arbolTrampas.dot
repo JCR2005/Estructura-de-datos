@@ -1,0 +1,10 @@
+digraph Arbol {
+    node [shape=circle, style=filled, fillcolor=lightblue];
+    "0x71e288001b50" [label="2"];
+    "0x71e288001b50" -> "0x71e288001cd0";
+    "0x71e288001cd0" [label="3"];
+    "0x71e288001cd0" -> "0x71e288001d70";
+    "0x71e288001d70" [label="3"];
+    "0x71e288001d70" -> "0x71e288002200";
+    "0x71e288002200" [label="3"];
+}
