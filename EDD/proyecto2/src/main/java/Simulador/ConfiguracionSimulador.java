@@ -219,15 +219,16 @@ public class ConfiguracionSimulador {
 
             if (archivo.exists()) {
                 try (Scanner lector = new Scanner(archivo)) {
-                    int cont = 0;
-                    while (lector.hasNextLine()) {
-                        if (cont > 0) {
-                            String linea = lector.nextLine();
-                            obtnerVehiculosArchivo(linea);
-                        }
-                        cont++;
-
+                  
+                    if (lector.hasNextLine()) {
+                        lector.nextLine();
                     }
+
+                    while (lector.hasNextLine()) {
+                        String linea = lector.nextLine();
+                        obtnerVehiculosArchivo(linea);
+                    }
+
                 } catch (FileNotFoundException e) {
                     System.out.println("No se pudo leer el archivo: " + e.getMessage());
                 }
