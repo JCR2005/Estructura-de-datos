@@ -18,7 +18,7 @@ public class ListaHas {
         cabeza = nuevo;
     }
 
-    public Object obtener(String clave) {
+    public Vehiculo obtener(String clave) {
         Nodo actual = cabeza;
         while (actual != null) {
             if (actual.clave.equals(clave)) {
@@ -48,6 +48,8 @@ public class ListaHas {
             actual = actual.siguiente;
         }
     }
+    
+  
 }
 
 class Nodo {

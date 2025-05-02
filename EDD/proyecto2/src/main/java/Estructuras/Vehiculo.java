@@ -1,43 +1,138 @@
 package Estructuras;
 
+import static java.lang.Math.random;
+import java.util.Random;
+
 /**
  *
  * @author carlos
  */
 public class Vehiculo {
 
-    public Vehiculo(String tipo, String placa, int tiempoEspera, int nivelUrgencia) {
+    /**
+     * @return the interseccionesPasadas
+     */
+    public int getInterseccionesPasadas() {
+        return interseccionesPasadas;
+    }
+
+    /**
+     * @param interseccionesPasadas the interseccionesPasadas to set
+     */
+    public void setInterseccionesPasadas(int interseccionesPasadas) {
+        this.interseccionesPasadas = interseccionesPasadas;
+    }
+
+    /**
+     * @return the Timeposperados
+     */
+    public int getTimeposperados() {
+        return Timeposperados;
+    }
+
+    /**
+     * @param Timeposperados the Timeposperados to set
+     */
+    public void setTimeposperados(int Timeposperados) {
+        this.Timeposperados = Timeposperados;
+    }
+
+    public Vehiculo(String tipo, String placa, String origen, String destino, int nivelUrgencia, int tiemEspe) {
         this.tipo = tipo;
         this.tiempoEspera = tiempoEspera;
+        this.filaorigen = obtenerFila(origen);
+        this.colorigen = obtenerColunma(origen);
+        this.coldestino = obtenerColunma(destino);
+        this.filadestino = obtenerFila(destino);
         this.nivelUrgencia = nivelUrgencia;
+        this.tiempoEspera = tiemEspe;
+        this.placa = placa;
+        this.pornersimbolo(tipo);
+    }
+
+    private String tipo = "";
+    private String placa = "";
+    private int tiempoEspera = 0;
+    private int nivelUrgencia = 0;
+    private int filadestino;
+    private int coldestino;
+    private int filaorigen;
+    private int colorigen;
+    private String simbolo = "";
+    private int interseccionesPasadas= 1;
+    private int Timeposperados;
+
+    public int obtenerFila(String nodo) {
+        int fila = nodo.charAt(0);
+
+        return (fila + 1) - 'A';
+    }
+
+    public int obtenerColunma(String nodo) {
+
+        String numeroStr = nodo.substring(1);
+        return Integer.parseInt(numeroStr);
+    }
+
+    public void pornersimbolo(String tipo) {
+        if (tipo.equals("AMBULANCIA")) {
+            this.setSimbolo("🚑");
+        } else if (tipo.equals("POLICIA")) {
+            this.setSimbolo("🚓");
+        } else if (tipo.equals("PARTICULAR")) {
+            this.setSimbolo(elegirParticular());
+        } else if (tipo.equals("TRANSPORTE")) {
+            this.setSimbolo("🚌");
+        }
+    }
+
+    public String elegirParticular() {
+        Random random = new Random();
+        int numero = 1;
+
+        for (int i = 0; i < 20; i++) {
+            numero = random.nextInt(5) + 1;
+        }
+        return switch (numero) {
+            case 1 ->
+                "🚗";
+            case 2 ->
+                "🚙";
+            case 3 ->
+                "🏍️";
+            case 4 ->
+                "🛵";
+            default ->
+                "🛻";
+        };
     }
 
     /**
-     * @return the destino
+     * @return the filadestino
      */
-    public String getDestino() {
-        return destino;
+    public int getFiladestino() {
+        return filadestino;
     }
 
     /**
-     * @param destino the destino to set
+     * @return the coldestino
      */
-    public void setDestino(String destino) {
-        this.destino = destino;
+    public int getColdestino() {
+        return coldestino;
     }
 
     /**
-     * @return the origen
+     * @return the filaorigen
      */
-    public String getOrigen() {
-        return origen;
+    public int getFilaorigen() {
+        return filaorigen;
     }
 
     /**
-     * @param origen the origen to set
+     * @return the colorigen
      */
-    public void setOrigen(String origen) {
-        this.origen = origen;
+    public int getColorigen() {
+        return colorigen;
     }
 
     /**
@@ -82,10 +177,32 @@ public class Vehiculo {
         this.nivelUrgencia = nivelUrgencia;
     }
 
-    private String tipo = "";
-    private String placa = "";
-    private int tiempoEspera = 0;
-    private int nivelUrgencia = 0;
-    private String destino;
-    private String origen;
+    /**
+     * @return the placa
+     */
+    public String getPlaca() {
+        return placa;
+    }
+
+    /**
+     * @param placa the placa to set
+     */
+    public void setPlaca(String placa) {
+        this.placa = placa;
+    }
+
+    /**
+     * @return the simbolo
+     */
+    public String getSimbolo() {
+        return simbolo;
+    }
+
+    /**
+     * @param simbolo the simbolo to set
+     */
+    public void setSimbolo(String simbolo) {
+        this.simbolo = simbolo;
+    }
+
 }

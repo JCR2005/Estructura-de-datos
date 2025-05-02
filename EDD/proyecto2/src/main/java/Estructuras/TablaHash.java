@@ -16,18 +16,21 @@ public class TablaHash {
 
     public void agregarActualizarVehiculo(String id, Vehiculo vehiculo) {
         int hash = Math.abs(id.hashCode() % maps.length);
-        System.out.println("__________________");
-        System.out.println(hash);
-        System.out.println("__________________");
+
         maps[hash].actualizar(id, vehiculo);
     }
 
     public void imprimirListas() {
         for (int i = 0; i < maps.length; i++) {
-            System.out.println("__________________");
+            System.out.println("Lista no."+(i+1));
             maps[i].imprimir();
-            System.out.println("__________________");
+            System.out.println("");
         }
+    }
+
+    public Vehiculo obtenerVehiculo(String clave) {
+        int hash = Math.abs(clave.hashCode() % maps.length);
+        return maps[hash].obtener(clave);
     }
 
 }
