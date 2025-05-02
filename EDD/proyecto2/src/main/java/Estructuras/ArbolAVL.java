@@ -164,11 +164,10 @@ private void dibujarArbol(Graphics2D g, NodoAVL nodo, int x, int y, int espacio)
     int ovalWidth = 160;
     int ovalHeight = 60;
 
-    // Dibujar óvalo
+    
     g.setColor(Color.BLACK);
     g.fillOval(x - ovalWidth / 2, y - ovalHeight / 2, ovalWidth, ovalHeight);
 
-    // Dibujar texto centrado
     g.setColor(Color.WHITE);
     g.setFont(new Font("Arial", Font.BOLD, 14));
     String texto = "Calle: " + nodo.valor.getCalle() + ", Av: " + nodo.valor.getAvenida() + ", Comp: " + nodo.complejidad;
@@ -179,7 +178,7 @@ private void dibujarArbol(Graphics2D g, NodoAVL nodo, int x, int y, int espacio)
 
     g.setColor(Color.BLACK);
 
-    int verticalGap = 120; // Espacio vertical entre niveles
+    int verticalGap = 120;
 
     // Dibujar rama izquierda
     if (nodo.izquierda != null) {

@@ -178,7 +178,7 @@ public class ColaAutos {
 
         Nodo actual = original.frente;
         while (actual != null) {
-            this.encolar(actual.valor); // MISMA referencia de Vehiculo
+            this.encolar(actual.valor); 
             actual = actual.siguiente;
         }
     }
